@@ -36,7 +36,7 @@ binaryNode* newNode(int packingCode, string packingName, string packingVersion, 
 }
 
 
-binarynode* insert(binaryNode* rootPoint, int packingCode, string packingName, string packingPrice, string packingVersion)
+binaryNode* insert(binaryNode* rootPoint, int packingCode, string packingName, string packingPrice, string packingVersion)
 {
 	static binaryNode *p;
 	binaryNode *returnNode;
@@ -44,7 +44,7 @@ binarynode* insert(binaryNode* rootPoint, int packingCode, string packingName, s
 
 	if (rootPoint == NULL)
 	{
-		returnNode = newNode(packingCode, packingName, packingPrice, packingVersion)
+		returnNode = newNode(packingCode, packingName, packingPrice, packingVersion);
 			returnNode->parent = p;
 		return returnNode;
 	}
@@ -173,9 +173,9 @@ int main()
 			system("CLS");
 		}
 
-		else (search(rootpointer, productnumber) == false)
+		else (search(rootpointer, productnumber) == false);
 		{
-			cout << "Packign Number" << productnumber << " doesn't look like its here/n";
+			cout << "Packing Number" << productnumber << " doesn't look like its here/n";
 			system("pause");
 			system("CLS");
 		}
@@ -198,15 +198,16 @@ int main()
 
 void loadfile()
 {
-	string loadProductName, loadProductVersion, loadProductPrice;
+	string loadProductVersion, loadProductPrice;
 	int loadProductCode;
+	int loadProductName;
 	ifstream software("menu.txt");
 	if (software.is_open())
 	{
 
 		while (software >> loadProductCode >> loadProductName >> loadProductVersion >> loadProductPrice)
 		{
-			rootpointer = insert((rootpointer, loadProductName, loadProductCode, loadProductVersion, loadProductPrice);
+			rootpointer = insert(rootpointer, loadProductName, loadProductCode, loadProductVersion, loadProductPrice);
 		}
 		software.close();
 	}
@@ -240,7 +241,7 @@ void insertData()
 		int i, j = 0;
 		for (i = 0; userInput[i] != '\0'; ++i)
 		{
-			if (userInput[i] != '')
+			if (userInput[i] != ' ')
 				userInput[j++] = userInput[i];
 		}
 		userInput[j] = '\0';
@@ -260,7 +261,7 @@ void insertData()
 
 	else
 	{
-		cout << "Menu"; endl;
+		cout << "Menu" << endl;
 		cout << "Sorry, I can't seem to locate your file";
 		system("pause");
 		system("CLS");

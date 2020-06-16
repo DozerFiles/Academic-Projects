@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 // Comment
+//comment 2
 class Customer
 {
 private:
